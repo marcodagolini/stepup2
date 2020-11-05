@@ -89,16 +89,18 @@ window.onload = function() {
                 callback(token);
             }
         };
-
-        lpTag.identities=[];
-        lpTag.identities.push(identityFn);
-        function identityFn(callback) {
+	
+	function identityFn(callback) {
             callback({
                 iss: "https://something.someplace.com/",
                 acr: "loa1",
                 sub: "qwerty1973"
             });
         }
+
+        lpTag.identities=[];
+        lpTag.identities.push(identityFn);
+        
 	
 
 
