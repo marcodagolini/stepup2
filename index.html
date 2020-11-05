@@ -89,7 +89,7 @@ function authenticate(){
 	setTimeout(function(){
 		console.log("inside2");
 		var CurrentLocation = window.location.href;
-		lpTag.newPage(CurrentLocation, {section: "costacrociere"});
+		lpTag.newPage(CurrentLocation, {section: "stepupauth"});
 		lpTag.sdes.push({
 			"type": "ctmrinfo",
 			"info": {
@@ -107,6 +107,16 @@ function authenticate(){
 	 
 	 
 window.onload = function() {
+	
+	var CurrentLocation = window.location.href;
+	lpTag.newPage(CurrentLocation, {section: "stepupauth"});
+	
+	lpTag.sdes.push({
+			"type": "ctmrinfo",
+			"info": {
+				customerId: '1'
+			}
+		});
 	
   window.lpGetAuthenticationToken = function(callback) {
 		console.log("inside lpGetAuthenticationToken!");
