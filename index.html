@@ -5,7 +5,17 @@
 	 
  
 	 
-	
+	 <script>
+		 var lpGetAuthenticationToken = function (callback) {
+            console.log("inside lpGetAuthenticationToken!");
+            var token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3NvbWV0aGluZy5pdCIsInN1YiI6InN0ZXB1cCIsInByZWZlcnJlZF91c2VybmFtZSI6IkpvaG5Eb2UiLCJwaG9uZV9udW1iZXIiOiIrMS0xMC0zNDQtMzc2NTMzMyIsImdpdmVuX25hbWUiOiJUZXN0IiwiZmFtaWx5X25hbWUiOiJUZXN0MiIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIiwiZ2VuZGVyIjoiTWFsZSIsImxwX3NkZXMiOlt7InR5cGUiOiJjdG1yaW5mbyIsImluZm8iOnsiY3N0YXR1cyI6ImNhbmNlbGxlZCIsImN0eXBlIjoidmlwIiwiY3VzdG9tZXJJZCI6ImFiYzEyMzQ1NiIsImJhbGFuY2UiOiItNDAwLjk5Iiwic29jaWFsSWQiOiIzNDU2Nzg3NjU0IiwiaW1laSI6Ijk5OTY2MzIxIiwidXNlck5hbWUiOiJ1c2VyMDAwIiwiY29tcGFueVNpemUiOiI1MDAiLCJhY2NvdW50TmFtZSI6ImJhbmsgY29ycCIsInJvbGUiOiJicm9rZXIiLCJsYXN0UGF5bWVudERhdGUiOnsiZGF5IjoiMTUiLCJtb250aCI6IjEwIiwieWVhciI6IjIwMTQifSwicmVnaXN0cmF0aW9uRGF0ZSI6eyJkYXkiOiIyMyIsIm1vbnRoIjoiNSIsInllYXIiOiIyMDEzIn19fSx7InR5cGUiOiJwZXJzb25hbCIsInBlcnNvbmFsIjp7ImZpcnN0bmFtZSI6IkpvaG4iLCJsYXN0bmFtZSI6IkRvZSIsImFnZSI6eyJhZ2UiOiIzNCIsInllYXIiOiIxOTgwIiwibW9udGgiOiI0IiwiZGF5IjoiMTUifSwiY29udGFjdHMiOlt7ImVtYWlsIjoibXluYW1lQGV4YW1wbGUuY29tIiwicGhvbmUiOiIzOTM0MjU5MjkwMTUifV0sImdlbmRlciI6Ik1BTEUiLCJjb21wYW55IjoiTGl2ZVBlcnNvbiJ9fV0sImlhdCI6MTYwNDU2NzcxMywiZXhwIjoyMjA0NTY3NzEzfQ.qpd_qhmE8Huv_JH7b5awRnteVQlrpXCem_2S0x7aID-i2rm5VZGelAauq_YHHKBg41anrjHfUJUfJGONPkGHjRRXafPT0W1TwjziiqoxjeoUy1Cngw1kpJg3y-2CM3oLRv22nibOPeoS__qaUDfHeyuwRtJEytATkFe4-V0mJ1_HxVFROCQsz2KdijytyiTLryXUrQlHnagIhfW80e4YJVKgbd_NRKXgL-qJ3qCDl-p-GVvLwN6cXhWU68psig_GzgTjMkKY6oiTaubNoT1J7TcHlP3kr7B801OTdcTtOkd2rrQtrDvw6TMuACs1sCBMd1Ib4Tz3X5Cn-uiaXjOJYw";
+	    if (token) {
+                console.log("got token! " + token);
+                console.log("calling callback with token...");
+                callback(token);
+            }
+        };
+		  </script>
 	 
 	 
 <!-- BEGIN LivePerson Monitor. -->
@@ -80,15 +90,7 @@ $(document).ready(function(){
 	
 
         // Authentication JSMethod for LiveEngage
-        var lpGetAuthenticationToken = function (callback) {
-            console.log("inside lpGetAuthenticationToken!");
-            var token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3NvbWV0aGluZy5pdCIsInN1YiI6InN0ZXB1cCIsInByZWZlcnJlZF91c2VybmFtZSI6IkpvaG5Eb2UiLCJwaG9uZV9udW1iZXIiOiIrMS0xMC0zNDQtMzc2NTMzMyIsImdpdmVuX25hbWUiOiJUZXN0IiwiZmFtaWx5X25hbWUiOiJUZXN0MiIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIiwiZ2VuZGVyIjoiTWFsZSIsImxwX3NkZXMiOlt7InR5cGUiOiJjdG1yaW5mbyIsImluZm8iOnsiY3N0YXR1cyI6ImNhbmNlbGxlZCIsImN0eXBlIjoidmlwIiwiY3VzdG9tZXJJZCI6ImFiYzEyMzQ1NiIsImJhbGFuY2UiOiItNDAwLjk5Iiwic29jaWFsSWQiOiIzNDU2Nzg3NjU0IiwiaW1laSI6Ijk5OTY2MzIxIiwidXNlck5hbWUiOiJ1c2VyMDAwIiwiY29tcGFueVNpemUiOiI1MDAiLCJhY2NvdW50TmFtZSI6ImJhbmsgY29ycCIsInJvbGUiOiJicm9rZXIiLCJsYXN0UGF5bWVudERhdGUiOnsiZGF5IjoiMTUiLCJtb250aCI6IjEwIiwieWVhciI6IjIwMTQifSwicmVnaXN0cmF0aW9uRGF0ZSI6eyJkYXkiOiIyMyIsIm1vbnRoIjoiNSIsInllYXIiOiIyMDEzIn19fSx7InR5cGUiOiJwZXJzb25hbCIsInBlcnNvbmFsIjp7ImZpcnN0bmFtZSI6IkpvaG4iLCJsYXN0bmFtZSI6IkRvZSIsImFnZSI6eyJhZ2UiOiIzNCIsInllYXIiOiIxOTgwIiwibW9udGgiOiI0IiwiZGF5IjoiMTUifSwiY29udGFjdHMiOlt7ImVtYWlsIjoibXluYW1lQGV4YW1wbGUuY29tIiwicGhvbmUiOiIzOTM0MjU5MjkwMTUifV0sImdlbmRlciI6Ik1BTEUiLCJjb21wYW55IjoiTGl2ZVBlcnNvbiJ9fV0sImlhdCI6MTYwNDU2NzcxMywiZXhwIjoyMjA0NTY3NzEzfQ.qpd_qhmE8Huv_JH7b5awRnteVQlrpXCem_2S0x7aID-i2rm5VZGelAauq_YHHKBg41anrjHfUJUfJGONPkGHjRRXafPT0W1TwjziiqoxjeoUy1Cngw1kpJg3y-2CM3oLRv22nibOPeoS__qaUDfHeyuwRtJEytATkFe4-V0mJ1_HxVFROCQsz2KdijytyiTLryXUrQlHnagIhfW80e4YJVKgbd_NRKXgL-qJ3qCDl-p-GVvLwN6cXhWU68psig_GzgTjMkKY6oiTaubNoT1J7TcHlP3kr7B801OTdcTtOkd2rrQtrDvw6TMuACs1sCBMd1Ib4Tz3X5Cn-uiaXjOJYw";
-	    if (token) {
-                console.log("got token! " + token);
-                console.log("calling callback with token...");
-                callback(token);
-            }
-        };
+        
 	
 	function identityFn(callback) {
             callback({
